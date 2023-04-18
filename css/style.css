@@ -10,11 +10,7 @@
 button{
     font: inherit;
 }
-img{
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
+
 
 /* || VARIABLES */
 :root{
@@ -41,106 +37,114 @@ img{
     --PADDING-SIDE: 15%;
 
     /* STANDARD MARGIN */
-    --MARGIN: clamp(1em, 2.5vh, 1.5em) 0;
+    --MARGIN: 2rem
 
 
 }
     
 /* || GENERAL STYLES */
 
-html{
-    font-size: var(--FS);
-    font-family: var(--FF);
-}
-
 body{
-    position: relative;
+    background-color: var(--BGCOLOR);
+    line-height: 1.5;
     min-height: 100vh;
-    overflow: auto;
-}
-
-img{
-    margin: var(--MARGIN);
-   /*  padding-left: var(--PADDING-SIDE);*/
-    padding-top: 3rem; 
-}
-.container{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    width: 80%;
-    height: 60%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    border-radius: var(--BORDER-RADIUS-CONTAINER);
-   
-}
-
-.sedans{
-    background-color: var(--BGCOLOR-SEDAN);
-    padding-left: var(--PADDING-SIDE);
-    padding-right: var(--PADDING-SIDE);
-    position: relative;
-}
-
-.suvs{
-    background-color: var(--BGCOLOR-SUVS);
-    padding-left: var(--PADDING-SIDE);
-    padding-right: var(--PADDING-SIDE);
-    position: relative;
-}
-
-.luxury{
-    background-color: var(--BGCOLOR-LUXURY);
-    padding-left: var(--PADDING-SIDE);
-    padding-right: var(--PADDING-SIDE);
-    position: relative;
-}
-
-.item__text{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    font-family: var(--FF);
+    font-size: var(--FS);
     color: var(--COLOR-PARAGRAPHS);
-    font-weight: 400;
-    padding-top: 3rem;
-    line-height: 2rem;
-}
-
-.item__header{
-    color: var(--COLOR-HEADINGS);
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 2rem;
-    letter-spacing: 1px; 
-    display: inline-block;
-    transform: scaleX(0.7) scaleY(1.8);
-    transform-origin: left;
-    padding-top: 0.8rem;
     
 }
 
-.item:last-child, .item__button {
-    position: absolute;
-    bottom: 3rem;
-  }
+.container{
+    
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-radius: 12px;
+    overflow: hidden;
+    margin: var(--MARGIN);
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+}
+
+.box1{
+    background-color: var(--BGCOLOR-SEDAN);
+}
+.box2{
+    background-color: var(--BGCOLOR-SUVS);
+}
+.box3{
+    background-color: var(--BGCOLOR-LUXURY);
+}
+
+.box{
+    padding: 40px;
+    position: relative;
+    display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+img{
+    width: 64px;
+    height: auto;
+    padding-bottom: 1.5rem;
+}
+
+.box h2{
+    font-family: var(--FF-HEADINGS);
+    font-weight: 700;
+    color: var(--COLOR-HEADINGS);
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.box p{
+    font-size: 15px;
+    color: var(--COLOR-PARAGRAPHS);
+    margin-top: 2rem;
+    line-height: 1.6;
+}
+
+
 
   .item__button{
     background-color: var(--BGCOLOR-BUTTON);
     border-radius: var(--BORDER-RADIUS-BUTTON);
-    width: 50%;
+    width:  50%;
     height: 3.5rem;
-    border: none;
-font-size: 1.2rem;
+    border: 2px solid hsl(0, 0%, 95%);
+font-size: 1rem;
 transition: transform 0.2s ease-in-out;
+margin-top: 60px;
+white-space: nowrap;
+
+
   }
 
-.sedans .item__button{
-    color: var(--BGCOLOR-SEDAN);
+.box1 button:hover {
+    background-color: var(--BGCOLOR-SEDAN);
+    color: var(--COLOR-HEADINGS);
 }
-.suvs .item__button{
-    color: var(--BGCOLOR-SUVS);
+
+.box2 button:hover {
+    background-color: var(--BGCOLOR-SUVS);
+    color: var(--COLOR-HEADINGS);
 }
-.luxury .item__button{
-    color: var(--BGCOLOR-LUXURY);
+
+.box3 button:hover {
+    background-color: var(--BGCOLOR-LUXURY);
+    color: var(--COLOR-HEADINGS);
 }
 
 .item__button:hover, .item__button:focus-visible{
@@ -148,35 +152,15 @@ transition: transform 0.2s ease-in-out;
  transform: scale(1.1);
 }
 
-footer{
-    
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: aqua;
-    width: 100%;
-    height: 3rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-  
-  
-}
 
 @media screen and (max-width: 768px){
-    .container{
-        grid-template-columns: 1fr; /* switch to a single column layout */
-      grid-template-rows: 1fr 1fr 1fr;
-      height: auto;
+    .wrapper{
+        grid-template-columns: 1fr;
     }
+}
 
-    .container > div {
-        height: 500px;
-        
+@media screen and (max-width: 425px){
+    .wrapper{
+        margin: 3rem, 0.5rem;
     }
-
-
-    
 }
