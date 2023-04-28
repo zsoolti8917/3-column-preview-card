@@ -1,50 +1,49 @@
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@700&display=swap');
+
 /* || RESET */
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-button{
+button {
     font: inherit;
 }
 
 
 /* || VARIABLES */
-:root{
+:root {
     /* FONTS */
     --FF: 'Red Hat Display', sans-serif;
     --FF-HEADINGS: 'Red Hat Display', sans-serif;
     --FS: 15px;
 
     /* COLORS */
-    --BGCOLOR:hsl(0, 0%, 95%);
-    --BGCOLOR-SEDAN:hsl(31, 77%, 52%);
-    --BGCOLOR-SUVS:hsl(184, 100%, 22%);
-    --BGCOLOR-LUXURY:hsl(179, 100%, 13%);
-    --COLOR-PARAGRAPHS:hsla(0, 0%, 100%, 0.75);
-    --COLOR-HEADINGS:hsl(0, 0%, 95%);
-    --BGCOLOR-BUTTON:hsl(0, 0%, 95%);
-    --BGCOLOR-HOVER:hsl(0, 0%, 60%);
+    --BGCOLOR: hsl(0, 0%, 95%);
+    --BGCOLOR-SEDAN: hsl(31, 77%, 52%);
+    --BGCOLOR-SUVS: hsl(184, 100%, 22%);
+    --BGCOLOR-LUXURY: hsl(179, 100%, 13%);
+    --COLOR-PARAGRAPHS: hsla(0, 0%, 100%, 0.75);
+    --COLOR-HEADINGS: hsl(0, 0%, 95%);
+    --BGCOLOR-BUTTON: hsl(0, 0%, 95%);
+    --BGCOLOR-HOVER: hsl(0, 0%, 60%);
 
     /*BORDERS*/
     --BORDER-RADIUS-CONTAINER: 7px;
-    --BORDER-RADIUS-BUTTON:30px;
+    --BORDER-RADIUS-BUTTON: 30px;
 
     /* STANDARD PADDING*/
     --PADDING-SIDE: 15%;
 
     /* STANDARD MARGIN */
     --MARGIN: 2rem
-
-
 }
-    
+
 /* || GENERAL STYLES */
 
-body{
+body {
     background-color: var(--BGCOLOR);
     line-height: 1.5;
     min-height: 100vh;
@@ -55,16 +54,16 @@ body{
     font-family: var(--FF);
     font-size: var(--FS);
     color: var(--COLOR-PARAGRAPHS);
-    
+
 }
 
-.container{
-    
+.container {
+
     max-width: 960px;
     margin: 0 auto;
 }
 
-.wrapper{
+.wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     border-radius: 12px;
@@ -72,36 +71,38 @@ body{
     margin: var(--MARGIN);
 }
 
-footer{
+footer {
     position: fixed;
     bottom: 0;
 }
 
-.box1{
+.box1 {
     background-color: var(--BGCOLOR-SEDAN);
 }
-.box2{
+
+.box2 {
     background-color: var(--BGCOLOR-SUVS);
 }
-.box3{
+
+.box3 {
     background-color: var(--BGCOLOR-LUXURY);
 }
 
-.box{
+.box {
     padding: 40px;
     position: relative;
     display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-img{
+img {
     width: 64px;
     height: auto;
     padding-bottom: 1.5rem;
 }
 
-.box h2{
+.box h2 {
     font-family: var(--FF-HEADINGS);
     font-weight: 700;
     color: var(--COLOR-HEADINGS);
@@ -109,7 +110,7 @@ img{
     text-transform: uppercase;
 }
 
-.box p{
+.box p {
     font-size: 15px;
     color: var(--COLOR-PARAGRAPHS);
     margin-top: 2rem;
@@ -118,19 +119,19 @@ img{
 
 
 
-  .item__button{
+.item__button {
     background-color: var(--BGCOLOR-BUTTON);
     border-radius: var(--BORDER-RADIUS-BUTTON);
-    width:  50%;
+    width: 50%;
     height: 3.5rem;
     border: 2px solid hsl(0, 0%, 95%);
-font-size: 1rem;
-transition: transform 0.2s ease-in-out;
-margin-top: 60px;
-white-space: nowrap;
+    font-size: 1rem;
+    transition: transform 0.2s ease-in-out;
+    margin-top: 60px;
+    white-space: nowrap;
 
 
-  }
+}
 
 .box1 button:hover {
     background-color: var(--BGCOLOR-SEDAN);
@@ -147,20 +148,21 @@ white-space: nowrap;
     color: var(--COLOR-HEADINGS);
 }
 
-.item__button:hover, .item__button:focus-visible{
- background-color: var(--BGCOLOR-HOVER);
- transform: scale(1.1);
+.item__button:hover,
+.item__button:focus-visible {
+    background-color: var(--BGCOLOR-HOVER);
+    transform: scale(1.1);
 }
 
 
-@media screen and (max-width: 768px){
-    .wrapper{
+@media screen and (max-width: 768px) {
+    .wrapper {
         grid-template-columns: 1fr;
     }
 }
 
-@media screen and (max-width: 425px){
-    .wrapper{
+@media screen and (max-width: 425px) {
+    .wrapper {
         margin: 3rem, 0.5rem;
     }
 }
